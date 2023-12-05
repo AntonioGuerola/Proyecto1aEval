@@ -2,6 +2,7 @@ package Model;
 
 import java.util.Objects;
 
+/* Constructor, get and set, toString y equals */
 public class Card {
     private int value;
     private String suit;
@@ -10,7 +11,6 @@ public class Card {
         this.value = 0;
         this.suit = "";
     }
-
     public Card(int value, String suit) {
         this.value = value;
         this.suit = suit;
@@ -45,29 +45,32 @@ public class Card {
         return value == card.value && Objects.equals(suit, card.suit);
     }
 
-    public Card generateCard() {
-        Card cardGenerated = new Card();
-        int valorDado = (int) Math.floor(Math.random() * 5 + 1);
-        switch (valorDado) {
-            case 0:
+    public void imprimirCard(Card card){
+        switch (suit){
+            case "nube":
+                //TODO= LOgica imprimir carta
+                System.out.println("nube");
                 break;
-            case 1:
+            case "mushroomPower":
+                //TODO= LOgica imprimir carta
+                System.out.println("mushroomPower");
                 break;
-            case 2:
+            case "firePower":
+                //TODO= LOgica imprimir carta
+                System.out.println("firePower");
                 break;
-            case 3:
-                cardGenerated = Luigi();
+            case "luigi":
+                //TODO= LOgica imprimir carta
+                System.out.println("luigi");
                 break;
-            case 4:
+            case "mario":
+                //TODO= LOgica imprimir carta
+                System.out.println("mario");
                 break;
-            case 5:
+            case "star":
+                //TODO= LOgica imprimir carta
+                System.out.println("star");
                 break;
         }
-        return cardGenerated;
     }
-
-    private Card Luigi(){
-        int contador
-    }
-
 }
