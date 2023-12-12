@@ -4,30 +4,54 @@ import java.util.Arrays;
 
 public class Deck{
     private Card[] cards;
-    private String type;
 
     public Deck() {
-        this.type = "";
         this.cards = new Card[52];
     }
-    public Deck(String type) {
-        this.type = type;
+
+    public void setCards(Card[] cards) {
+        this.cards = cards;
     }
 
     public Card[] getCards() {
         return cards;
     }
 
-    private void makeSpanishDesk(){
+    @Override
+    public String toString() {
+        return "Deck{" +
+                "cards=" + Arrays.toString(cards) +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Deck deck = (Deck) o;
+        return Arrays.equals(cards, deck.cards);
+    }
+
+    private void makeFrenchDesk(){
+        int value = 1;
         for (int i = 0; i < this.cards.length; i++) {
-            if (i < 12) {
-                cards[i] = gold();
-            } else if (i < 25) {
-                cards[i] = cups();
-            } else if (i < 38) {
-                cards[i] = swords();
-            } else if (i < 51) {
-                cards[i] = clubs();
+            cards[i] = new Card();
+            if (i < 13) {
+                cards[i].setSuit("♥");
+                cards[i].setValue(value);
+            } else if (i < 26) {
+                cards[i].setSuit("♣");
+                cards[i].setValue(value);
+            } else if (i < 39) {
+                cards[i].setSuit("♠");
+                cards[i].setValue(value);
+            } else if (i < 52) {
+                cards[i].setSuit("♦");
+                cards[i].setValue(value);
+            }
+            value++;
+            if (value == 14){
+                value = 1;
             }
         }
     }
