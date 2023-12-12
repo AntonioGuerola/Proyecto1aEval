@@ -45,6 +45,7 @@ public class Card {
         return value == card.value && Objects.equals(suit, card.suit);
     }
 
+    /*Para el minijuego del póker de Mario Bros
     public void imprimirCard(Card card){
         switch (suit){
             case "nube":
@@ -72,5 +73,5 @@ public class Card {
                 System.out.println("star");
                 break;
         }
-    }
+    }*/
 }
