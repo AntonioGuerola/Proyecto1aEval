@@ -56,24 +56,9 @@ public class Deck{
         }
     }
 
-    public void shuffleDesk(){
-
-    }
-
-    public Card[] pickRandomCard(){
-        return null;
-    }
-
-    public void printDesk(){
-
-    }
-
-    public void printCard(Card card){
-
-    }
-
-    public void printCards(Card[] cards){
-
+    public Card pickRandomCard(){
+        Card randomCard = cards[(int) (Math.random() * (52-1))];
+        return randomCard;
     }
 
     //Esto de a continuación sería para el minijuego de póker de Mario Bros
