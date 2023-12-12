@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class Player {
     private String name;
-    private Deck playerDeck;
+    private Desk playerDesk;
 
     public Player(){
         this.name = "Jugador";
     }
 
-    public Player(String name, Deck playerDeck) {
+    public Player(String name, Desk playerDesk) {
         this.name = name;
-        this.playerDeck = playerDeck;
+        this.playerDesk = playerDesk;
     }
 
     public String getName() {
@@ -23,12 +23,12 @@ public class Player {
         this.name = name;
     }
 
-    public Deck getPlayerDeck() {
-        return playerDeck;
+    public Desk getPlayerDesk() {
+        return playerDesk;
     }
 
-    public void setPlayerDeck(Deck playerDeck) {
-        this.playerDeck = playerDeck;
+    public void setPlayerDesk(Desk playerDesk) {
+        this.playerDesk = playerDesk;
     }
 
 
@@ -44,7 +44,7 @@ public class Player {
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
-                ", playerDeck=" + playerDeck +
+                ", playerDesk=" + playerDesk +
                 '}';
     }
 }
