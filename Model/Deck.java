@@ -2,10 +2,10 @@ package Model;
 
 import java.util.Arrays;
 
-public class Desk{
+public class Deck{
     private Card[] cards;
 
-    public Desk() {
+    public Deck() {
         this.cards = new Card[52];
     }
 
@@ -19,7 +19,7 @@ public class Desk{
 
     @Override
     public String toString() {
-        return "Desk{" +
+        return "Deck{" +
                 "cards=" + Arrays.toString(cards) +
                 '}';
     }
@@ -28,11 +28,11 @@ public class Desk{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Desk desk = (Desk) o;
-        return Arrays.equals(cards, desk.cards);
+        Deck deck = (Deck) o;
+        return Arrays.equals(cards, deck.cards);
     }
 
-    private void makeFrenchDesk(){
+    public void makeFrenchDeck(){
         int value = 1;
         for (int i = 0; i < this.cards.length; i++) {
             cards[i] = new Card();
@@ -62,45 +62,45 @@ public class Desk{
     }
 
     //Esto de a continuación sería para el minijuego de póker de Mario Bros
-/* public class Desk {
-    private Card[] desk;
+/* public class Deck {
+    private Card[] deck;
 
-    public Desk(Card[] desk) {
-        this.desk = desk;
+    public Deck(Card[] deck) {
+        this.deck = deck;
     }
 
-    public Card[] getDesk() {
-        return desk;
+    public Card[] getDeck() {
+        return deck;
     }
 
-    public void setDesk(Card[] desk) {
-        this.desk = desk;
+    public void setDeck(Card[] deck) {
+        this.deck = deck;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Desk desk1 = (Desk) o;
-        return Arrays.equals(desk, desk1.desk);
+        Deck deck1 = (Deck) o;
+        return Arrays.equals(deck, deck1.deck);
     }
 */
     /* Generación de los palos de la baraja, en este caso serán de menor a mayor: nube, superMushroom, firePower, Luigi, Mario, Star */
-  /*  public void generateDesk() {
-        this.desk = new Card[30];
-        for (int i = 0; i < this.desk.length; i++) {
+  /*  public void generateDeck() {
+        this.deck = new Card[30];
+        for (int i = 0; i < this.deck.length; i++) {
             if (i < 4) {
-                desk[i] = nube();
+                deck[i] = nube();
             } else if (i < 9) {
-                desk[i] = mushroomPower();
+                deck[i] = mushroomPower();
             } else if (i < 14) {
-                desk[i] = firePower();
+                deck[i] = firePower();
             } else if (i < 19) {
-                desk[i] = luigi();
+                deck[i] = luigi();
             } else if (i < 24) {
-                desk[i] = mario();
+                deck[i] = mario();
             } else if (i < 29) {
-                desk[i] = star();
+                deck[i] = star();
             }
         }
     }

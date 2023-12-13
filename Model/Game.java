@@ -4,20 +4,20 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Game {
-    private Desk desk;
+    private Deck deck;
     private Player[] players;
 
-    public Game(Desk desk, Player[] players) {
-        this.desk = desk;
+    public Game(Deck deck, Player[] players) {
+        this.deck = deck;
         this.players = players;
     }
 
-    public Desk getDesk() {
-        return desk;
+    public Deck getDeck() {
+        return deck;
     }
 
-    public void setDesk(Desk desk) {
-        this.desk = desk;
+    public void setDeck(Deck deck) {
+        this.deck = deck;
     }
 
     public Player[] getPlayers() {
@@ -33,13 +33,13 @@ public class Game {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return Objects.equals(desk, game.desk) && Arrays.equals(players, game.players);
+        return Objects.equals(deck, game.deck) && Arrays.equals(players, game.players);
     }
 
     @Override
     public String toString() {
         return "Game{" +
-                "desk=" + desk +
+                "deck=" + deck +
                 ", players=" + Arrays.toString(players) +
                 '}';
     }
