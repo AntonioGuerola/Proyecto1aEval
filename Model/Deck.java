@@ -33,7 +33,7 @@ public class Deck{
     }
 
     public void makeFrenchDeck(){
-        int value = 1;
+        int value = 0;
         for (int i = 0; i < this.cards.length; i++) {
             cards[i] = new Card();
             if (i < 13) {
@@ -59,6 +59,13 @@ public class Deck{
     public Card pickRandomCard(){
         Card randomCard = cards[(int) (Math.random() * (52-1))];
         return randomCard;
+    }
+    public  void removeCardFromDeck(Card removedCard){
+        for (int i = 0; i < this.cards.length; i++){
+            if (this.cards[i] == removedCard){
+                this.cards[i] = null;
+            }
+        }
     }
 
     //Esto de a continuación sería para el minijuego de póker de Mario Bros

@@ -43,4 +43,38 @@ public class Game {
                 ", players=" + Arrays.toString(players) +
                 '}';
     }
+
+    public static int calculatePoints(Player player) {
+        int playerPoints = 0;
+        for (int i = 0; i < player.getCards().length; i++) {
+            if (player.getCards()[i].getValue() >= 10) {
+                playerPoints += 10;
+            } else if (player.getCards()[i].getValue() == 1 && playerPoints < 11) {
+                playerPoints += 11;
+            } else {
+                playerPoints += player.getCards()[i].getValue();
+            }
+        }
+        return playerPoints;
+    }
+
+    public String Winner() {
+        int points = 0;
+        int winnerPoints = 0;
+        String winner = "";
+        for (int i = 0; i < this.players.length; i++) {
+            points = calculatePoints(this.players[i]);
+            if (winnerPoints == points) {
+                winner = "empate";
+            }
+            if (winnerPoints < points && points <= 21) {
+                winnerPoints = points;
+                winner = this.players[i].getName();
+            }
+            if (Objects.equals(winner, "")) {
+                winner = "ninguno";
+            }
+        }
+        return winner;
+    }
 }

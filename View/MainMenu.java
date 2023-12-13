@@ -16,19 +16,4 @@ public class MainMenu {
     public static String readPlayerName() {
         return UI.readString("Introduce el nombre del jugador");
     }
-    public static Object nameCheck(Player[] playersPlaying) {
-        String name = "";
-        boolean comp = true;
-        do {
-            name = MainMenu.readPlayerName();
-            for (int i = 0; i < playersPlaying.length && comp; i++) {
-                if (playersPlaying[i] != null) {
-                    if (Objects.equals(name, playersPlaying[i].getName().toLowerCase().replaceAll(" ", ""))) {
-                        comp = false;
-                    }
-                }
-            }
-        } while (!comp);
-        return name;
-    }
 }

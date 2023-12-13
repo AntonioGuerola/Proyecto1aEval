@@ -8,4 +8,24 @@ public class BlackJackMenu {
         System.out.println("4 jugadores");
         return UI.readInt("¿Cuántos jugadores habrá?");
     }
+    public static String printCard(int value, String suit){
+        String card = "************\n" +
+                "*          *\n" +
+                "*          *\n" +
+                "*          *\n" +
+                "* " + suit + "     " + value + " *\n" +
+                "*          *\n" +
+                "*          *\n" +
+                "*          *\n" +
+                "*          *\n" +
+                "************\n";
+    return card;
+    }
+    public static void whosWinner(String winner){
+        if (winner.equals("empate")) {
+            System.out.println("Habéis empatado");
+        } else {
+            System.out.println("Ha ganado el jugador " + winner);
+        }
+    }
 }

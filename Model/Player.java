@@ -1,18 +1,28 @@
 package Model;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Player {
     private String name;
-    private Deck playerDeck;
+    private Card[] cards;
+    private Deck deck;
 
-    public Player(){
-        this.name = "Jugador";
+    public Player(String name, Card[] cards) {
+        this.name = name;
+        this.cards = cards;
     }
 
-    public Player(String name, Deck playerDeck) {
+    public Card[] getCards() {
+        return cards;
+    }
+
+    public void setCards(Card[] cards) {
+        this.cards = cards;
+    }
+
+    public Player(String name, Deck deck) {
         this.name = name;
-        this.playerDeck = playerDeck;
     }
 
     public String getName() {
@@ -22,15 +32,6 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Deck getPlayerDeck() {
-        return playerDeck;
-    }
-
-    public void setPlayerDeck(Deck playerDeck) {
-        this.playerDeck = playerDeck;
-    }
-
 
     @Override
     public boolean equals(Object o) {
@@ -44,7 +45,23 @@ public class Player {
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
-                ", playerDeck=" + playerDeck +
                 '}';
+    }
+
+    public void fillCards() {
+        this.cards = new Card[52];
+        for (int i = 0; i < this.cards.length; i++) {
+            this.cards[i] = new Card(0, "");
+        }
+    }
+    public void addCard(Card addedCard) {
+        boolean comprobate = false;
+        for (int i = 0; i < cards.length && !comprobate; i++) {
+            if (cards[i].getValue() == 0) {
+                cards[i] = new Card();
+                this.cards[i] = addedCard;
+                comprobate = true;
+            }
+        }
     }
 }
