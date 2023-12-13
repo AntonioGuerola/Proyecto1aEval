@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class UI {
     public static int readInt(String msg) {
         Scanner teclado = new Scanner(System.in);
-        System.out.print(msg + ": ");
+        System.out.println(msg + ": ");
         return teclado.nextInt();
     }
 
