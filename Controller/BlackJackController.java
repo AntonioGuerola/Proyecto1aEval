@@ -98,5 +98,6 @@ public class BlackJackController {
             IApoints = game.calculatePoints(game.getPlayers()[1]);
         }
         System.out.println("La IA tiene un total de " + IApoints + " puntos");
+        UI.pressEnter();
     }
 }

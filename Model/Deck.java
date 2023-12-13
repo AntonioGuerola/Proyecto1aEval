@@ -33,29 +33,33 @@ public class Deck{
     }
 
     public void makeFrenchDeck(){
-        int value = 0;
-        for (int i = 0; i < this.cards.length; i++) {
+        int value = 1;
+        String suit = "";
+        for (int i = 0; i < cards.length; i++) {
             cards[i] = new Card();
             if (i < 13) {
-                cards[i].setSuit("♥");
+                suit = "♥";
+                cards[i].setSuit(suit);
                 cards[i].setValue(value);
             } else if (i < 26) {
-                cards[i].setSuit("♣");
+                suit = "♣";
+                cards[i].setSuit(suit);
                 cards[i].setValue(value);
             } else if (i < 39) {
-                cards[i].setSuit("♠");
+                suit = "♠";
+                cards[i].setSuit(suit);
                 cards[i].setValue(value);
             } else if (i < 52) {
-                cards[i].setSuit("♦");
+                suit = "♦";
+                cards[i].setSuit(suit);
                 cards[i].setValue(value);
             }
-            value++;
             if (value == 14){
                 value = 1;
             }
+            value++;
         }
     }
-
     public Card pickRandomCard(){
         Card randomCard = cards[(int) (Math.random() * (52-1))];
         return randomCard;

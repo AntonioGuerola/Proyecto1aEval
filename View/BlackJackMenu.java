@@ -27,5 +27,6 @@ public class BlackJackMenu {
         } else {
             System.out.println("Ha ganado el jugador " + winner);
         }
+        UI.pressEnter();
     }
 }

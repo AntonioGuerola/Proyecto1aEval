@@ -12,7 +12,7 @@ public class Test {
         Deck.makeFrenchDeck();
         System.out.println(Deck);
 
-        System.out.println(BlackJackMenu.printCard(9, "❤"));
+        System.out.println(BlackJackMenu.printCard(9, "♥"));
     }
     
 }
